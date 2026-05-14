@@ -1,0 +1,18 @@
+<!-- song-detail.html -->
+@if (songInfo(); as song) {
+  <button class="btn-back" (click)="backToList()">
+    ← 返回清單
+  </button>
+  <h2>{{ song.title }}</h2>
+  <div class="parts-container">
+    @for (part of song.data; track part.id) {
+      <div class="part-card">
+        <div class="part-header">
+          <span>聲部：{{ part.instrument }}</span>
+          <button (click)="copyToClipboard(part.mml)">點我複製 MML</button>
+        </div>
+        <pre class="mml-content">{{ part.mml }}</pre>
+      </div>
+    }
+  </div>
+}

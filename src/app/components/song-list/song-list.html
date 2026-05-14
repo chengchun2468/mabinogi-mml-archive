@@ -1,0 +1,35 @@
+<!-- song-list.html -->
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        @for (col of columnDefs; track col.key) {
+          @switch (col.key) {
+            @default {
+              <th>{{ col.label }}</th>
+            }
+          }
+        }
+      </tr>
+    </thead>
+    <tbody>
+      @for (song of displayList(); track song.song_id) {
+        <tr>
+          @for (col of columnDefs; track col.key) {
+            <td>
+              @switch (col.key) {
+                @case ('title') {
+                  <span [routerLink]="['/song', song.song_id]" class="url">{{ $any(song)[col.key] }}</span>
+                }
+                @default {
+                  <!-- 使用型別斷言或動態取值 -->
+                  {{ $any(song)[col.key] }}
+                }
+              }
+            </td>
+          }
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
