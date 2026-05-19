@@ -1,5 +1,6 @@
 <!-- song-detail.html -->
-@if (songInfo(); as song) {
+@let song = songInfo();
+@if (song) {
   <button class="btn-back" (click)="backToList()">
     ← 返回清單
   </button>

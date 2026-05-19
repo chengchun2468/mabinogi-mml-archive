@@ -1,5 +1,6 @@
 <!-- song-list.html -->
-<div class="table-container">
+@let loading = songService.isSongsDataLoading();
+<div class="table-container"  [appLoading]="loading">
   <table>
     <thead>
       <tr>

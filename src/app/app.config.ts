@@ -13,6 +13,6 @@ export const appConfig: ApplicationConfig = {
       withJsonpSupport(),
       withFetch(),
     ),
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
   ]
 };

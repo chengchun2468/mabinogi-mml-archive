@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { computed, inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
-import { Observable, of, shareReplay } from 'rxjs';
+import { finalize, Observable, of, shareReplay } from 'rxjs';
 import { MMLSong, SongList } from '../interface/song';
 import { isPlatformBrowser } from '@angular/common';
 
@@ -15,6 +15,7 @@ export class SongService {
   private songs$ = this.http.jsonp<MMLSong[]>(this.apiUrl, 'callback').pipe(shareReplay(1));
   private platformId = inject(PLATFORM_ID);
   /*---------------*/
+  public isSongsDataLoading = signal(false);
   public _songs = signal<MMLSong[]>([]);
   public readonly songs = this._songs.asReadonly();
 
@@ -23,7 +24,10 @@ export class SongService {
   }
 
   private initData() {
-    this.getAllSongs().subscribe({
+    this.isSongsDataLoading.set(true);
+    this.getAllSongs().pipe(
+      finalize(() => this.isSongsDataLoading.set(false)) 
+    ).subscribe({
       next: (res) => this._songs.set(res),
       error: (err) => console.error('抓取失敗', err)
     });
