@@ -1,0 +1,113 @@
+
+/* ------* font loading *------*/
+@font-face {
+  font-family: 'Symbols';
+  src: url('./../fonts/DelaGothicOne-Regular.woff2') format('woff2');
+  unicode-range: U+2600-26FF, U+2700-27BF;
+}
+
+@font-face {
+  font-family: 'Number';
+  src: url('./../fonts/MPLUS1Code-Regular.woff2') format('woff2');
+  font-weight: 400;
+  unicode-range: U+0030-0039; 
+}
+@font-face {
+  font-family: 'Number';
+  src: url('./../fonts/MPLUS1Code-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+  unicode-range: U+0030-0039; 
+}
+@font-face {
+  font-family: 'Number';
+  src: url('./../fonts/MPLUS1Code-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+  unicode-range: U+0030-0039;
+}
+
+@font-face {
+  font-family: 'EN';
+  src: url('./../fonts/Zain-Regular.woff2') format('woff2'); 
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0000-00FF;
+}
+@font-face {
+  font-family: 'EN';
+  src: url('./../fonts/Zain-Bold.woff2') format('woff2'); 
+  font-weight: 700;
+  font-display: swap;
+  unicode-range: U+0000-00FF;
+}
+
+@font-face {
+  font-family: 'JP';
+  src: url('./../fonts/MPLUS1Code-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+3040-309F, U+30A0-30FF, U+31F0-31FF, U+FF66-FF9F;
+}
+@font-face {
+  font-family: 'JP';
+  src: url('./../fonts/MPLUS1Code-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+  unicode-range: U+3040-309F, U+30A0-30FF, U+31F0-31FF, U+FF66-FF9F;
+}
+@font-face {
+  font-family: 'JP';
+  src: url('./../fonts/MPLUS1Code-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+  unicode-range: U+3040-309F, U+30A0-30FF, U+31F0-31FF, U+FF66-FF9F;
+}
+
+@font-face {
+  font-family: 'TW';
+  src: url('./../fonts/ChocolateClassicalSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+3040-309F, U+30A0-30FF, U+31F0-31FF, U+FF66-FF9F;
+}
+
+/* ------* design token *------*/
+$font-family-base: 'Number', 'EN', 'JP', 'Symbols', 'TW', sans-serif;
+
+$size-12: 12px;
+$size-13: 13px;
+$size-14: 14px;
+$size-32: 32px;
+$size-36: 36px;
+
+$weight-regular:  400;
+$weight-semibold: 600;
+$weight-bold:     700;
+
+/* ------* Semantic *------*/
+$font-size-main-title:   $size-36;
+$font-size-song-title:   $size-32;
+$font-size-body:         $size-14;
+$font-size-code:         $size-13;
+$font-size-table-header: $size-12;
+
+$font-weight-title:        $weight-semibold;
+$font-weight-table-header: $weight-bold;
+$font-weight-body:         $weight-regular;
+
+/* ------* render *------*/
+:root {
+  --font-family: #{$font-family-base};
+}
+
+body {
+  font-family: var(--font-family);
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  input, button, select, textarea {
+    font-family: inherit;
+  }
+}
