@@ -1,0 +1,39 @@
+
+/* ------* design tokens *------*/
+$white: #FFFFFF;
+$black: #000000;
+
+$gray-01: #F9F9F9;
+$gray-02: #E0E0E0;
+$gray-03: #666666;
+$gray-04: #2D2D2D;
+$gray-05: #242424;
+
+$red-01: #A62B2B;
+$red-02: #8A2020;
+
+/* ------* Semantic *------*/
+/* ------* render *------*/
+:root {                  // Light
+  --theme-bg-main:       #{$gray-01};
+  --theme-bg-card:       #{$white};
+  --theme-bg-mml:        #{$black};
+  --theme-text-primary:  #{$black};
+  --theme-text-muted:    #{$gray-04};
+  --theme-text-accent:   #{$red-02};
+  --theme-border-main:   #{$gray-02};
+  --theme-border-accent: #{$red-02};
+  --theme-tag:           #{$gray-02};
+}
+
+[data-theme="dark"] {    // Dark
+  --theme-bg-main:       #{$gray-04};
+  --theme-bg-card:       #{$black};
+  --theme-bg-mml:        #{$gray-04};
+  --theme-text-primary:  #{$gray-01};
+  --theme-text-muted:    #{$gray-04};
+  --theme-text-accent:   #{$red-01};
+  --theme-border-main:   #{$gray-02};
+  --theme-border-accent: #{$red-01};
+  --theme-tag:           #{$gray-02};
+}
