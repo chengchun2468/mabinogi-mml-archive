@@ -1,36 +1,30 @@
 <!-- song-list.html -->
 @let loading = songService.isSongsDataLoading();
-<div class="table-container"  [appLoading]="loading">
-  <table>
-    <thead>
-      <tr>
-        @for (col of columnDefs; track col.key) {
+<div class="table-container" [appLoading]="loading">
+  <div class="table-header" role="row">
+    @for (col of columnDefs; track col.key) {
+      @switch (col.key) {
+        @default {
+          <div role="columnheader">{{ col.label }}</div>
+        }
+      }
+    }
+  </div>
+  <div class="table-row">
+    @for (song of displayList(); track song.song_id) {
+      @for (col of columnDefs; track col.key) {
+        <div [ngClass]="'song-' + col.key">
           @switch (col.key) {
+            @case ('title') {
+              <span [routerLink]="['/song', song.song_id]" class="url">{{ $any(song)[col.key] }}</span>
+            }
             @default {
-              <th>{{ col.label }}</th>
+              <!-- 使用型別斷言或動態取值 -->
+              {{ $any(song)[col.key] }}
             }
           }
-        }
-      </tr>
-    </thead>
-    <tbody>
-      @for (song of displayList(); track song.song_id) {
-        <tr>
-          @for (col of columnDefs; track col.key) {
-            <td>
-              @switch (col.key) {
-                @case ('title') {
-                  <span [routerLink]="['/song', song.song_id]" class="url">{{ $any(song)[col.key] }}</span>
-                }
-                @default {
-                  <!-- 使用型別斷言或動態取值 -->
-                  {{ $any(song)[col.key] }}
-                }
-              }
-            </td>
-          }
-        </tr>
+        </div>
       }
-    </tbody>
-  </table>
+    }
+  </div>
 </div>

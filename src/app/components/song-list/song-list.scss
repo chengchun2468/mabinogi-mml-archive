@@ -1,7 +1,19 @@
-.table-container {
-    cursor: default;
+@use './../../../assets/styles/_system' as *;
 
-    .url {
-        cursor: pointer;
-    }
+.table-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+
+  .table-header, .table-row {
+    display: grid;
+    grid-template-columns: 50px 1fr 200px 60px; 
+    align-items: center;
+    gap: $gap-table-items;
+  }
+
+  .url {
+    cursor: pointer;
+  }
 }
