@@ -5,26 +5,28 @@
     @for (col of columnDefs; track col.key) {
       @switch (col.key) {
         @default {
-          <div role="columnheader">{{ col.label }}</div>
+          <div role="columnheader" [ngClass]="col.key" class="header-item">{{ col.label }}</div>
         }
       }
     }
   </div>
-  <div class="table-row">
+  <div class="table-body">
     @for (song of displayList(); track song.song_id) {
-      @for (col of columnDefs; track col.key) {
-        <div [ngClass]="'song-' + col.key">
-          @switch (col.key) {
-            @case ('title') {
-              <span [routerLink]="['/song', song.song_id]" class="url">{{ $any(song)[col.key] }}</span>
+      <div class="row">
+        @for (col of columnDefs; track col.key) {
+          <div [ngClass]="col.key" class="row-item">
+            @switch (col.key) {
+              @case ('title') {
+                <span [routerLink]="['/song', song.song_id]" class="url">{{ $any(song)[col.key] }}</span>
+              }
+              @default {
+                <!-- 使用型別斷言或動態取值 -->
+                {{ $any(song)[col.key] }}
+              }
             }
-            @default {
-              <!-- 使用型別斷言或動態取值 -->
-              {{ $any(song)[col.key] }}
-            }
-          }
-        </div>
-      }
+          </div>
+        }
+      </div>
     }
   </div>
 </div>

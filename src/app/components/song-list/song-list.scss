@@ -6,14 +6,66 @@
   flex-direction: column;
   cursor: default;
 
-  .table-header, .table-row {
+  .table-header, .table-body .row {
     display: grid;
     grid-template-columns: 50px 1fr 200px 60px; 
     align-items: center;
     gap: $gap-table-items;
   }
 
-  .url {
-    cursor: pointer;
+  .table-header {
+    padding: $padding-table-row 0; 
+    border-bottom: 1.5px solid $theme-border-main;
+    
+    .header-item{
+      display: flex;
+      align-items: center;
+      color: $theme-text-accent;
+      font-size: $font-size-table-header;
+      font-weight: $font-weight-table-header;
+      letter-spacing: 0.05rem;
+
+      &.song_id, &.partsCount {
+        justify-content: center;
+      }
+    }
+  }
+
+  .table-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .row {
+      padding: $padding-table-row 0;
+      border-bottom: 1px solid oklch(from $theme-border-main l c h / 0.3);
+      transition: 0.3s;
+
+      &:hover {
+        background-color: oklch(from $theme-hover l c h / 0.05);
+
+        .title {
+          color: $theme-text-accent;
+        }
+      }
+      
+      .row-item{
+        display: flex;
+        align-items: center;
+        color: $theme-text-primary;
+        font-size: $font-size-body;
+        font-weight: $font-weight-body;
+        letter-spacing: 0.05rem;
+
+        &.song_id, &.partsCount {
+          justify-content: center;
+        }
+      
+        .url {
+          cursor: pointer;
+
+        }
+      }
+    }
   }
 }
