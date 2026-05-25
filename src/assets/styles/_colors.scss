@@ -1,16 +1,15 @@
 
 /* ------* design tokens *------*/
-$white: #FFFFFF;
-$black: #000000;
+$white: oklch(100% 0 0);
+$black: oklch(0% 0 0);
 
-$gray-01: #F9F9F9;
-$gray-02: #E0E0E0;
-$gray-03: #666666;
-$gray-04: #2D2D2D;
-$gray-05: #242424;
+$gray-01: oklch(98% 0.005 250);   // #F9F9F9
+$gray-02: oklch(89% 0.005 250);   // #E0E0E0
+$gray-03: oklch(48% 0.005 250);   // #666666
+$gray-04: oklch(27% 0.005 250);   // #2D2D2D
 
-$red-01: #A62B2B;
-$red-02: #8A2020;
+$red-01: oklch(43% 0.19 28);      // #A62B2B
+$red-02: oklch(37% 0.17 28);      // #8A2020
 
 /* ------* Semantic *------*/
 /* ------* render *------*/
@@ -20,7 +19,8 @@ $red-02: #8A2020;
   --theme-bg-mml:        #{$black};
   --theme-text-primary:  #{$black};
   --theme-text-muted:    #{$gray-04};
-  --theme-text-accent:   #{$red-02};
+  --theme-text-accent:   #{$red-01};
+  --theme-hover:         #{$gray-04};
   --theme-border-main:   #{$gray-02};
   --theme-border-accent: #{$red-02};
   --theme-tag:           #{$gray-02};
@@ -33,7 +33,20 @@ $red-02: #8A2020;
   --theme-text-primary:  #{$gray-01};
   --theme-text-muted:    #{$gray-04};
   --theme-text-accent:   #{$red-01};
+  --theme-hover:         #{$gray-04};
   --theme-border-main:   #{$gray-02};
   --theme-border-accent: #{$red-01};
   --theme-tag:           #{$gray-02};
 }
+
+// var
+$theme-bg-main:       var(--theme-bg-main);
+$theme-bg-card:       var(--theme-bg-card);
+$theme-bg-mml:        var(--theme-bg-mml);
+$theme-text-primary:  var(--theme-text-primary);
+$theme-text-muted:    var(--theme-text-muted);
+$theme-text-accent:   var(--theme-text-accent);
+$theme-hover:         var(--theme-hover);
+$theme-border-main:   var(--theme-border-main);
+$theme-border-accent: var(--theme-border-accent);
+$theme-tag:           var(--theme-tag);

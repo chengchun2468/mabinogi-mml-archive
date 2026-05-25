@@ -1,1 +1,5 @@
-@use 'assets/styles/_system.scss' as system;
+@use 'assets/styles/_system.scss' as *;
+
+body {
+  background-color: $theme-bg-main;
+}

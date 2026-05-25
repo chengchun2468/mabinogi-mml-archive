@@ -1,79 +1,51 @@
 
 /* ------* font loading *------*/
-@font-face {
-  font-family: 'Symbols';
-  src: url('./../fonts/DelaGothicOne-Regular.woff2') format('woff2');
-  unicode-range: U+2600-26FF, U+2700-27BF;
-}
+// styles/_typography.scss
 
 @font-face {
-  font-family: 'Number';
-  src: url('./../fonts/MPLUS1Code-Regular.woff2') format('woff2');
-  font-weight: 400;
-  unicode-range: U+0030-0039; 
+  font-family: 'LINE-Seed-TW';
+  src: url('/fonts/LINESeedTW_OTF_Th.woff2') format('woff2');
+  font-weight: 100;
 }
 @font-face {
-  font-family: 'Number';
-  src: url('./../fonts/MPLUS1Code-SemiBold.woff2') format('woff2');
+  font-family: 'LINE-Seed-TW';
+  src: url('/fonts/LINESeedTW_OTF_Rg.woff2') format('woff2');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'LINE-Seed-TW';
+  src: url('/fonts/LINESeedTW_OTF_Eb.woff2') format('woff2');
   font-weight: 600;
-  font-display: swap;
-  unicode-range: U+0030-0039; 
 }
 @font-face {
-  font-family: 'Number';
-  src: url('./../fonts/MPLUS1Code-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-display: swap;
-  unicode-range: U+0030-0039;
+  font-family: 'LINE-Seed-TW';
+  src: url('/fonts/LINESeedJP_OTF_Bd.woff2') format('woff2');
+  font-weight: 800;
 }
 
 @font-face {
-  font-family: 'EN';
-  src: url('./../fonts/Zain-Regular.woff2') format('woff2'); 
-  font-weight: 400;
-  font-display: swap;
-  unicode-range: U+0000-00FF;
+  font-family: 'LINE-Seed-JP';
+  src: url('/fonts/LINESeedJP_OTF_Th.woff2') format('woff2');
+  font-weight: 100;
 }
 @font-face {
-  font-family: 'EN';
-  src: url('./../fonts/Zain-Bold.woff2') format('woff2'); 
-  font-weight: 700;
-  font-display: swap;
-  unicode-range: U+0000-00FF;
-}
-
-@font-face {
-  font-family: 'JP';
-  src: url('./../fonts/MPLUS1Code-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-display: swap;
-  unicode-range: U+3040-309F, U+30A0-30FF, U+31F0-31FF, U+FF66-FF9F;
+  font-family: 'LINE-Seed-JP';
+  src: url('/fonts/LINESeedJP_OTF_Rg.woff2') format('woff2');
+  font-weight: 300;
 }
 @font-face {
-  font-family: 'JP';
-  src: url('./../fonts/MPLUS1Code-SemiBold.woff2') format('woff2');
+  font-family: 'LINE-Seed-JP';
+  src: url('/fonts/LINESeedJP_OTF_Eb.woff2') format('woff2');
   font-weight: 600;
-  font-display: swap;
-  unicode-range: U+3040-309F, U+30A0-30FF, U+31F0-31FF, U+FF66-FF9F;
 }
 @font-face {
-  font-family: 'JP';
-  src: url('./../fonts/MPLUS1Code-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-display: swap;
-  unicode-range: U+3040-309F, U+30A0-30FF, U+31F0-31FF, U+FF66-FF9F;
-}
-
-@font-face {
-  font-family: 'TW';
-  src: url('./../fonts/ChocolateClassicalSans-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-display: swap;
-  unicode-range: U+3040-309F, U+30A0-30FF, U+31F0-31FF, U+FF66-FF9F;
+  font-family: 'LINE-Seed-JP';
+  src: url('/fonts/LINESeedJP_OTF_Bd.woff2') format('woff2');
+  font-weight: 800;
 }
 
 /* ------* design token *------*/
-$font-family-base: 'Number', 'EN', 'JP', 'Symbols', 'TW', sans-serif;
+$font-family-base: 'LINE-Seed-TW', 'LINE-Seed-JP', sans-serif;
 
 $size-12: 12px;
 $size-13: 13px;
@@ -81,9 +53,10 @@ $size-14: 14px;
 $size-32: 32px;
 $size-36: 36px;
 
-$weight-regular:  400;
-$weight-semibold: 600;
-$weight-bold:     700;
+$weight-100:  100;
+$weight-300:  300;
+$weight-600:  600;
+$weight-800:  800;
 
 /* ------* Semantic *------*/
 $font-size-main-title:   $size-36;
@@ -91,10 +64,12 @@ $font-size-song-title:   $size-32;
 $font-size-body:         $size-14;
 $font-size-code:         $size-13;
 $font-size-table-header: $size-12;
+$font-size-tab:          $size-12;
 
-$font-weight-title:        $weight-semibold;
-$font-weight-table-header: $weight-bold;
-$font-weight-body:         $weight-regular;
+$font-weight-title:        $weight-800;
+$font-weight-table-header: $weight-600;
+$font-weight-body:         $weight-300;
+$font-weight-info:         $weight-100;
 
 /* ------* render *------*/
 :root {
