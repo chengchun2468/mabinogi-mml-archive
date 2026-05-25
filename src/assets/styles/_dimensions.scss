@@ -19,9 +19,10 @@ $radius-tag:    $radius-lg;
 $radius-mml:    $radius-md;
 $radius-button: $radius-sm;
 
-$padding-card:       $spacing-xl;
-$padding-table-row:  $spacing-md;
-$padding-tag:        $spacing-xs;
+$padding-card:            $spacing-xl;
+$padding-table-row:       $spacing-md;
+$padding-table-half-row:  calc($spacing-md / 2);
+$padding-tag:             $spacing-xs;
 
 $gap-layout:      $spacing-lg;
 $gap-mml-parts:   $spacing-md;

@@ -1,112 +1,7 @@
-// *, *::before, *::after {
-//   box-sizing: border-box;
-// }
-
-// html {
-//   font-family: sans-serif;
-//   line-height: 1.15;
-//   -webkit-text-size-adjust: 100%;
-// }
-
-// body {
-//   margin: 0;
-//   padding: 0;
-// }
-
-// h1, h2, h3, h4, h5, h6, p, blockquote, pre {
-//   margin: 0;
-//   padding: 0;
-// }
-
-// ol, ul {
-//   list-style: none;
-//   margin: 0;
-//   padding: 0;
-// }
-
-// img, svg, video, canvas {
-//   display: block;
-//   max-width: 100%;
-//   height: auto;
-// }
-
-// a {
-//   text-decoration: none;
-//   color: inherit;
-//   background-color: transparent;
-  
-//   &:active, &:hover {
-//     outline: 0;
-//   }
-// }
-
-// button, input, select, textarea {
-//   font-family: inherit;
-//   font-size: 100%;
-//   margin: 0;
-//   background: transparent;
-//   border: none;
-//   color: inherit;
-  
-//   &:focus {
-//     outline: none;
-//   }
-// }
-
-// button, input, select, textarea {
-//   font-family: inherit;
-//   font-size: 100%;
-//   margin: 0;
-//   background: transparent;
-//   border: none;
-//   color: inherit;
-  
-//   appearance: none; 
-//   -webkit-appearance: none;
-  
-//   &:focus {
-//     outline: none;
-//   }
-// }
-
-// button, 
-// input[type="button"], 
-// input[type="submit"], 
-// input[type="reset"] {
-//   cursor: pointer;
-//   background: transparent;
-//   border: 0;
-//   padding: 0;
-  
-//   &:disabled {
-//     cursor: default;
-//     opacity: 0.6;
-//   }
-// }
-
-// textarea {
-//   overflow: auto;
-//   resize: vertical;
-// }
-
-// table {
-//   border-collapse: collapse;
-//   border-spacing: 0;
-//   width: 100%;
-// }
-
-// styles/_reset.scss
-
-/* ==========================================================================
-   1. 全域盒模型鎖定（唯一留下的現代鋼筋，防止 Padding 撐破版面）
-   ========================================================================== */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* ==========================================================================
-   2. 徹底抹平外邊距與內邊距（全網頁歸零）
-   ========================================================================== */
 html, body, 
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 ol, ul, li,
@@ -117,38 +12,29 @@ form, label {
   padding: 0;
 }
 
-/* ==========================================================================
-   3. 抹平特定標籤的原生樣式（不給任何預設顏色、預設字體大小）
-   ========================================================================== */
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
 }
 
-// 移除列表的點點與數字
 ol, ul {
   list-style: none;
 }
 
-// 移除超連結的底線，顏色直接放水流（由父層全權決定）
 a {
   text-decoration: none;
   color: inherit; 
 }
 
-// 移除圖片與媒體的原生底邊縫隙
 img, svg, video, canvas, audio {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-/* ==========================================================================
-   4. 表單與按鈕：徹底扒光瀏覽器的預設陰影與立體外觀
-   ========================================================================== */
 button, input, select, textarea {
-  font-family: inherit; /* 乖乖聽話繼承座位表 */
-  font-size: inherit;   /* 絕不自作聰明放大縮小 */
+  font-family: inherit;
+  font-size: inherit;
   line-height: inherit;
   color: inherit;
   margin: 0;
@@ -157,12 +43,10 @@ button, input, select, textarea {
   border: none;
   border-radius: 0;
   
-  // 現代標準：扒光所有預設 3D 外觀和怪異陰影
   appearance: none;
   -webkit-appearance: none;
 }
 
-// 讓按鈕與點擊類 input 具備基本的滑過小手
 button, 
 input[type="button"], 
 input[type="submit"], 
@@ -170,15 +54,11 @@ input[type="reset"] {
   cursor: pointer;
 }
 
-// 防止 textarea 寬度被使用者拉壞
 textarea {
   overflow: auto;
   resize: vertical; 
 }
 
-/* ==========================================================================
-   5. 表格：抹平所有奇葩間距，等一下刻歌單 Table 的純淨起點
-   ========================================================================== */
 table {
   border-collapse: collapse;
   border-spacing: 0;
