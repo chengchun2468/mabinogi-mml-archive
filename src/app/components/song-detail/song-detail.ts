@@ -1,6 +1,6 @@
 import { Component, computed, inject, input } from '@angular/core';
 import { Router } from '@angular/router';
-import { SongService } from '../../service/song';
+import { SongService } from '../../core/service/song';
 
 @Component({
   selector: 'app-song-detail',

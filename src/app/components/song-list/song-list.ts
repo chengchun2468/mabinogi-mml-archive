@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { SongService } from '../../service/song';
-import { columnDefs } from '../../interface/song';
+import { SongService } from '../../core/service/song';
+import { columnDefs } from '../../core/interface/song';
 import { LoadingDirective } from "../../shared/loading/loading-directive";
 
 @Component({
